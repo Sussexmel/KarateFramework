@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'io.cucumber:cucumber-java:7.2.3'
+    testImplementation 'io.cucumber:cucumber-junit:7.2.3'
+    testImplementation 'net.serenity-bdd:serenity-core:3.2.0'
+    testImplementation 'net.serenity-bdd:serenity-junit:3.2.0'
+    testImplementation 'net.serenity-bdd:serenity-cucumber:3.2.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.1.0'
+    testImplementation 'com.intuit.karate:karate-junit5:1.2.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(Test) {
+    systemProperty 'cucumber.junit.platform.engine', 'io.cucumber.junit.platform.engine.CucumberEngine'
+}
