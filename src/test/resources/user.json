@@ -1,0 +1,12 @@
+[
+  {
+    "type": "invalid",
+    "username": "newuser",
+    "password": "password123"
+  },
+  {
+    "type": "valid",
+    "username": "username",
+    "password": "password"
+  }
+]
